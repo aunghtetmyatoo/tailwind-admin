@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import User1Image from "../assets/images/user/user-01.png";
-import User2Image from "../assets/images/user/user-02.png";
-import User3Image from "../assets/images/user/user-03.png";
-import User4Image from "../assets/images/user/user-04.png";
-import User5Image from "../assets/images/user/user-05.png";
+import User1Image from "../../assets/images/user/user-01.png";
+import User2Image from "../../assets/images/user/user-02.png";
+import User3Image from "../../assets/images/user/user-03.png";
+import User4Image from "../../assets/images/user/user-04.png";
+import User5Image from "../../assets/images/user/user-05.png";
 
 function Chat() {
   const [isOpen, setIsOpen] = useState(false);

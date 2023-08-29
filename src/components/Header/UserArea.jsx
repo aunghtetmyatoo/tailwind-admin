@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import User1Image from "../assets/images/user/user-01.png";
+import User1Image from "../../assets/images/user/user-01.png";
 
 const UserArea = () => {
   const [isOpen, setIsOpen] = useState(false);

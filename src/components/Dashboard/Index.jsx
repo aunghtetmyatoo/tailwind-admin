@@ -1,9 +1,11 @@
 import React from "react";
-import Card from "./Card";
-import ChartOne from "./charts/ChartOne";
-import ChartTwo from "./charts/ChartTwo";
-import ChartThree from "./charts/ChartThree";
-import ChartFour from "./charts/ChartFour";
+import Card from "../Card/Index";
+import ChartOne from "../charts/ChartOne";
+import ChartTwo from "../charts/ChartTwo";
+import ChartThree from "../charts/ChartThree";
+import ChartFour from "../charts/ChartFour";
+import Table from "../Table/Index";
+import ChatCard from "../ChatCard/Index";
 
 const Dashboard = () => {
   return (
@@ -21,6 +23,10 @@ const Dashboard = () => {
           <ChartTwo />
           <ChartThree />
           <ChartFour />
+          <div class="col-span-12 xl:col-span-8">
+            <Table />
+          </div>
+          <ChatCard />
         </div>
       </div>
     </main>

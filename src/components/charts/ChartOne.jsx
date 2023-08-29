@@ -172,7 +172,8 @@ const ChartOne = () => {
           series={options.series}
           // type="bar"
           // width="500"
-        />  
+          height={350}
+        />
       </div>
     </div>
   );

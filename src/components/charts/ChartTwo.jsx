@@ -117,7 +117,14 @@ const ChartTwo = () => {
           series={options.series}
           type="bar"
           // width="500"
+          height={350}
         />
+        {/* <Chart
+          options={options}
+          series={options.series}
+          type="bar"
+          height={350}
+        /> */}
       </div>
     </div>
   );

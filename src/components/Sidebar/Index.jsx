@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RxDashboard } from "react-icons/rx";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import Logo from "../assets/images/logo/logo.svg";
+import Logo from "../../assets/images/logo/logo.svg";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
