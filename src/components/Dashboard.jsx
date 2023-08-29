@@ -3,7 +3,6 @@ import Card from "./Card";
 import ChartOne from "./charts/ChartOne";
 import ChartTwo from "./charts/ChartTwo";
 import ChartThree from "./charts/ChartThree";
-import Map from "./Map";
 import ChartFour from "./charts/ChartFour";
 
 const Dashboard = () => {
