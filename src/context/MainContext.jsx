@@ -14,7 +14,6 @@ export const MainProvider = ({ children }) => {
     <MainContext.Provider
       value={{
         darkMode,
-        setDarkMode,
         toggleMode,
       }}
     >
