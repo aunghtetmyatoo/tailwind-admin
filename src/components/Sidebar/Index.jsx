@@ -86,8 +86,8 @@ const Sidebar = () => {
                 ),
                 isDropdown: true,
                 dropdownItems: [
-                  { name: "Form Elements", route: "/from-elements" },
-                  { name: "Form Layout", route: "/from-layout" },
+                  { name: "Form Elements", route: "/form-elements" },
+                  { name: "Form Layout", route: "/form-layout" },
                 ],
               },
               {
