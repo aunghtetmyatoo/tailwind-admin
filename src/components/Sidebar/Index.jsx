@@ -1,7 +1,17 @@
 import React from "react";
 import Logo from "../../assets/images/logo/logo.svg";
 import Group from "./Group";
-import { RxDashboard } from "react-icons/rx";
+import {
+  RxDashboard,
+  RxCalendar,
+  RxAvatar,
+  RxIdCard,
+  RxTable,
+  RxPieChart,
+  RxGear,
+  RxMix,
+  RxPinRight,
+} from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
@@ -33,12 +43,12 @@ const Sidebar = () => {
                   />
                 ),
                 isDropdown: true,
-                dropdownItems: [{ name: "eCommerce" }],
+                dropdownItems: [{ name: "eCommerce", route: "/" }],
               },
               {
-                name: "Dashboards",
+                name: "Calendar",
                 icon: (
-                  <RxDashboard
+                  <RxCalendar
                     class="fill-current"
                     width="14"
                     height="14"
@@ -47,6 +57,119 @@ const Sidebar = () => {
                   />
                 ),
                 isDropdown: false,
+                route: "/calendar",
+              },
+              {
+                name: "Profile",
+                icon: (
+                  <RxAvatar
+                    class="fill-current"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  />
+                ),
+                isDropdown: false,
+                route: "/profile",
+              },
+              {
+                name: "Forms",
+                icon: (
+                  <RxIdCard
+                    class="fill-current"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  />
+                ),
+                isDropdown: true,
+                dropdownItems: [
+                  { name: "Form Elements", route: "/from-elements" },
+                  { name: "Form Layout", route: "/from-layout" },
+                ],
+              },
+              {
+                name: "Tables",
+                icon: (
+                  <RxTable
+                    class="fill-current"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  />
+                ),
+                isDropdown: false,
+                route: "/tables",
+              },
+              {
+                name: "Settings",
+                icon: (
+                  <RxGear
+                    class="fill-current"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  />
+                ),
+                isDropdown: false,
+                route: "/settings",
+              },
+            ]}
+          />
+          <Group
+            name="Others"
+            groupItems={[
+              {
+                name: "Chart",
+                icon: (
+                  <RxPieChart
+                    class="fill-current"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  />
+                ),
+                isDropdown: false,
+                route: "/chart",
+              },
+              {
+                name: "UI Elements",
+                icon: (
+                  <RxMix
+                    class="fill-current"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  />
+                ),
+                isDropdown: true,
+                dropdownItems: [
+                  { name: "Alerts", route: "/alerts" },
+                  { name: "Buttons", route: "/buttons" },
+                ],
+              },
+              {
+                name: "Authentication",
+                icon: (
+                  <RxPinRight
+                    class="fill-current"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  />
+                ),
+                isDropdown: true,
+                dropdownItems: [
+                  { name: "Sign In", route: "/signin" },
+                  { name: "Sign Up", route: "/signup" },
+                ],
               },
             ]}
           />

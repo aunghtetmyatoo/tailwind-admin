@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard/Index";
 import { useContext } from "react";
 import { MainContext } from "./context/MainContext";
 import { Route, Routes } from "react-router-dom";
+import Calendar from "./components/Calendar/Index";
 
 function App() {
   const { darkMode } = useContext(MainContext);
@@ -21,8 +22,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
-          {/* <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} /> */}
+          <Route path="/calendar" element={<Calendar />} />
         </Routes>
       </div>
     </div>
