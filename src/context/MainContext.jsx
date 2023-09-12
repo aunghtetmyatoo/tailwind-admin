@@ -5,9 +5,14 @@ export const MainContext = createContext({});
 
 export const MainProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
 
   const toggleMode = () => {
     setDarkMode(!darkMode);
+  };
+
+  const toggleSidebar = () => {
+    setSidebar(!sidebar);
   };
 
   return (
@@ -15,6 +20,8 @@ export const MainProvider = ({ children }) => {
       value={{
         darkMode,
         toggleMode,
+        sidebar,
+        toggleSidebar,
       }}
     >
       {children}
