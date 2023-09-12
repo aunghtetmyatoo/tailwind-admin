@@ -6,6 +6,11 @@ export const MainContext = createContext({});
 export const MainProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  const [headerDropdown, setHeaderDropdown] = useState({
+    notification: false,
+    chat: false,
+    user: false,
+  });
 
   const toggleMode = () => {
     setDarkMode(!darkMode);
@@ -15,6 +20,17 @@ export const MainProvider = ({ children }) => {
     setSidebar(!sidebar);
   };
 
+  const toggleHeaderDropdown = (dropdown) => {
+    setHeaderDropdown((prevState) => {
+      const newState = { ...prevState };
+      for (const key in newState) {
+        key !== dropdown && (newState[key] = false);
+      }
+      newState[dropdown] = !newState[dropdown];
+      return newState;
+    });
+  };
+
   return (
     <MainContext.Provider
       value={{
@@ -22,6 +38,8 @@ export const MainProvider = ({ children }) => {
         toggleMode,
         sidebar,
         toggleSidebar,
+        headerDropdown,
+        toggleHeaderDropdown,
       }}
     >
       {children}

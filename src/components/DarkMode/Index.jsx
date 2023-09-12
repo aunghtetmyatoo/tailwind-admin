@@ -7,8 +7,8 @@ const DarkMode = () => {
   return (
     <li>
       <label
-        class={`bg-${
-          darkMode ? "primary" : "stroke"
+        class={`${
+          darkMode ? "bg-primary" : "bg-stroke"
         } relative m-0 block h-7.5 w-14 rounded-full`}
       >
         <input

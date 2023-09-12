@@ -1,27 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import { MainContext } from "../../context/MainContext";
 
 function Notification() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  const { headerDropdown, toggleHeaderDropdown } = useContext(MainContext);
 
   return (
     <li class="relative">
-      <a
-        class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
-        onClick={toggleDropdown}
+      <div
+        class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white hover:cursor-pointer"
+        onClick={() => toggleHeaderDropdown("notification")}
       >
         <span class="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1">
           <span class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
         </span>
 
-        <IoMdNotificationsOutline className="fill-current duration-300 ease-in-out text-xl text-bodydark2" />
-      </a>
+        <IoMdNotificationsOutline className="fill-current duration-300 ease-in-out text-xl" />
+      </div>
 
-      {isOpen && (
+      {headerDropdown.notification && (
         <div class="absolute -right-27 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
           <div class="px-4.5 py-3">
             <h5 class="text-sm font-medium text-bodydark2">Notification</h5>
@@ -31,7 +28,7 @@ function Notification() {
             <li>
               <a
                 class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                href="#"
+                href="/"
               >
                 <p class="text-sm">
                   <span class="text-black dark:text-white">
@@ -47,7 +44,7 @@ function Notification() {
             <li>
               <a
                 class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                href="#"
+                href="/"
               >
                 <p class="text-sm">
                   <span class="text-black dark:text-white">
@@ -62,7 +59,7 @@ function Notification() {
             <li>
               <a
                 class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                href="#"
+                href="/"
               >
                 <p class="text-sm">
                   <span class="text-black dark:text-white">
@@ -78,7 +75,7 @@ function Notification() {
             <li>
               <a
                 class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                href="#"
+                href="/"
               >
                 <p class="text-sm">
                   <span class="text-black dark:text-white">

@@ -1,22 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import User1Image from "../../assets/images/user/user-01.png";
+import { MainContext } from "../../context/MainContext";
 
 const UserArea = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  const { headerDropdown, toggleHeaderDropdown } = useContext(MainContext);
+
   return (
-    <div
-      class="relative"
-      //   x-data="{ dropdownOpen: false }"
-      // @click.outside="dropdownOpen = false"
-    >
-      <a
-        class="flex items-center gap-4"
-        onClick={toggleDropdown}
-        // @click.prevent="dropdownOpen = ! dropdownOpen"
+    <div class="relative">
+      <div
+        class="flex items-center gap-4 hover:cursor-pointer"
+        onClick={() => toggleHeaderDropdown("user")}
       >
         <span class="hidden text-right lg:block">
           <span class="block text-sm font-medium text-black dark:text-white">
@@ -29,20 +23,27 @@ const UserArea = () => {
           <img src={User1Image} alt="User" />
         </span>
 
-        <FiChevronDown
-          className="duration-300 ease-in-out text-xl text-bodydark2"
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-        />
-      </a>
+        {headerDropdown.user ? (
+          <FiChevronUp
+            className="hidden sm:block duration-300 ease-in-out text-xl text-bodydark2"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          />
+        ) : (
+          <FiChevronDown
+            className="hidden sm:block duration-300 ease-in-out text-xl text-bodydark2"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          />
+        )}
+      </div>
 
-      {isOpen && (
-        <div
-          // x-show="dropdownOpen"
-          class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark"
-        >
+      {headerDropdown.user && (
+        <div class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
           <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
             <li>
               <a
@@ -71,7 +72,7 @@ const UserArea = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/"
                 class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
               >
                 <svg
